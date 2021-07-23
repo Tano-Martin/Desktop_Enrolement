@@ -18,15 +18,16 @@ class MainCarte(QtWidgets.QDialog, FORM_CLASS):
         self.capture_btn.clicked.connect(self.capture)
 
     def capture(self):
+        dimension = self.frame.frameGeometry()
         img,_ = QtWidgets.QFileDialog.getSaveFileName(self, "Enregistrer sous", filter="PNG(*.png);; JPEG(*.jpg)")
         if sys.platform == "darwin":
             if img[-3:] == "png":
                 screen = QtWidgets.QApplication.primaryScreen()
-                screenshot = screen.grabWindow(40, 30, 501, 301)
+                screenshot = screen.grabWindow(dimension)
                 screenshot.save(img, 'png')
             elif img[-3:] == "jpg":
                 screen = QtWidgets.QApplication.primaryScreen()
-                screenshot = screen.grabWindow(40, 30, 501, 301)
+                screenshot = screen.grabWindow(dimension)
                 screenshot.save(img, 'jpg')
         else:
             if img[-3:] == "png":
