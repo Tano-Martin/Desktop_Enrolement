@@ -1,4 +1,5 @@
 import os
+import sys
 import sqlite3
 from PyQt5 import QtWidgets, QtGui
 from PyQt5.uic import loadUiType
@@ -18,14 +19,24 @@ class MainCarte(QtWidgets.QDialog, FORM_CLASS):
 
     def capture(self):
         img,_ = QtWidgets.QFileDialog.getSaveFileName(self, "Enregistrer sous", filter="PNG(*.png);; JPEG(*.jpg)")
-        if img[-3:] == "png":
-            screen = QtWidgets.QApplication.primaryScreen()
-            screenshot = screen.grabWindow(self.frame.winId())
-            screenshot.save(img, 'png')
-        elif img[-3:] == "jpg":
-            screen = QtWidgets.QApplication.primaryScreen()
-            screenshot = screen.grabWindow(self.frame.winId())
-            screenshot.save(img, 'jpg')
+        if sys.platform == "darwin":
+            if img[-3:] == "png":
+                screen = QtWidgets.QApplication.primaryScreen()
+                screenshot = screen.grabWindow(40, 30, 501, 301)
+                screenshot.save(img, 'png')
+            elif img[-3:] == "jpg":
+                screen = QtWidgets.QApplication.primaryScreen()
+                screenshot = screen.grabWindow(40, 30, 501, 301)
+                screenshot.save(img, 'jpg')
+        else:
+            if img[-3:] == "png":
+                screen = QtWidgets.QApplication.primaryScreen()
+                screenshot = screen.grabWindow(self.frame.winId())
+                screenshot.save(img, 'png')
+            elif img[-3:] == "jpg":
+                screen = QtWidgets.QApplication.primaryScreen()
+                screenshot = screen.grabWindow(self.frame.winId())
+                screenshot.save(img, 'jpg')
         QtWidgets.QMessageBox.information(self, "Succès", "Capture enregistrer avec succès.")
         self.close()
 
