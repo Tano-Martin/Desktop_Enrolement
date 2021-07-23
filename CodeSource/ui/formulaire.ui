@@ -1,0 +1,981 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1299</width>
+    <height>684</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Formulaire d'enrolement</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../imageQtDesigner.qrc">
+    <normaloff>:/img/assets/1914868.png</normaloff>:/img/assets/1914868.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>16</x>
+      <y>20</y>
+      <width>541</width>
+      <height>621</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+font: 14pt &quot;Roboto&quot;;
+</string>
+    </property>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>22</y>
+       <width>541</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius:5px;
+background-color:#777fff;
+color: rgb(255, 255, 255);
+font: 57 16pt &quot;Roboto Medium&quot;;</string>
+     </property>
+     <property name="text">
+      <string>FORMULAIRE D'ENROLEMENT</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>98</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:none;
+font: 10pt &quot;Roboto&quot;;</string>
+     </property>
+     <property name="text">
+      <string>NOM</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="nom_field">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>92</y>
+       <width>261</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">padding-lefl:10px;
+border:1px solid #444;
+border-radius:5px;</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>144</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:none;
+font: 10pt &quot;Roboto&quot;;</string>
+     </property>
+     <property name="text">
+      <string>PRENOM(S)</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="prenom_field">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>138</y>
+       <width>261</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">padding-lefl:10px;
+border:1px solid #444;
+border-radius:5px;</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>204</y>
+       <width>131</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:none;
+font: 10pt &quot;Roboto&quot;;</string>
+     </property>
+     <property name="text">
+      <string>DATE DE NAISSANCE</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>248</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:none;
+font: 10pt &quot;Roboto&quot;;</string>
+     </property>
+     <property name="text">
+      <string>LIEU DE NAISSANCE</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>331</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:none;
+font: 10pt &quot;Roboto&quot;;</string>
+     </property>
+     <property name="text">
+      <string>DOMICILE</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_7">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>434</y>
+       <width>181</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:none;
+font: 10pt &quot;Roboto&quot;;</string>
+     </property>
+     <property name="text">
+      <string>NOM ET PRENOM(S) DU PERE</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_8">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>374</y>
+       <width>85</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:none;
+font: 10pt &quot;Roboto&quot;;</string>
+     </property>
+     <property name="text">
+      <string>NATIONALITE</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_9">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>500</y>
+       <width>201</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:none;
+font: 10pt &quot;Roboto&quot;;</string>
+     </property>
+     <property name="text">
+      <string>NOM ET PRENOM(S) DE LA MERE</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="photo_btn">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>250</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+	font: 9pt &quot;Roboto&quot;;
+	border-style: solid;
+	border-top-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgb(215, 215, 215), stop:1 rgb(222, 222, 222));
+	border-right-color: qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 rgb(217, 217, 217), stop:1 rgb(227, 227, 227));
+	border-left-color: qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 rgb(227, 227, 227), stop:1 rgb(217, 217, 217));
+	border-bottom-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgb(215, 215, 215), stop:1 rgb(222, 222, 222));
+	border-width: 1px;
+	border-radius: 15px;
+	color: rgb(0,0,0);
+	padding: 2px;
+	background-color: rgb(255,255,255);
+}
+QPushButton::default{
+	border-style: solid;
+	border-top-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgb(215, 215, 215), stop:1 rgb(222, 222, 222));
+	border-right-color: qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 rgb(217, 217, 217), stop:1 rgb(227, 227, 227));
+	border-left-color: qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 rgb(227, 227, 227), stop:1 rgb(217, 217, 217));
+	border-bottom-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgb(215, 215, 215), stop:1 rgb(222, 222, 222));
+	border-width: 1px;
+	border-radius: 5px;
+	color: rgb(0,0,0);
+	padding: 2px;
+	background-color: rgb(255,255,255);
+}
+QPushButton:hover{
+	border-style: solid;
+	border-top-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgb(195, 195, 195), stop:1 rgb(222, 222, 222));
+	border-right-color: qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 rgb(197, 197, 197), stop:1 rgb(227, 227, 227));
+	border-left-color: qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 rgb(227, 227, 227), stop:1 rgb(197, 197, 197));
+	border-bottom-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgb(195, 195, 195), stop:1 rgb(222, 222, 222));
+	border-width: 1px;
+	border-radius: 5px;
+	color: rgb(0,0,0);
+	padding: 2px;
+	background-color: rgb(255,255,255);
+}
+QPushButton:pressed{
+	border-style: solid;
+	border-top-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgb(215, 215, 215), stop:1 rgb(222, 222, 222));
+	border-right-color: qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 rgb(217, 217, 217), stop:1 rgb(227, 227, 227));
+	border-left-color: qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 rgb(227, 227, 227), stop:1 rgb(217, 217, 217));
+	border-bottom-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgb(215, 215, 215), stop:1 rgb(222, 222, 222));
+	border-width: 1px;
+	border-radius: 5px;
+	color: rgb(0,0,0);
+	padding: 2px;
+	background-color: rgb(142,142,142);
+}
+QPushButton:disabled{
+	border-style: solid;
+	border-top-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgb(215, 215, 215), stop:1 rgb(222, 222, 222));
+	border-right-color: qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 rgb(217, 217, 217), stop:1 rgb(227, 227, 227));
+	border-left-color: qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 rgb(227, 227, 227), stop:1 rgb(217, 217, 217));
+	border-bottom-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgb(215, 215, 215), stop:1 rgb(222, 222, 222));
+	border-width: 1px;
+	border-radius: 5px;
+	color: #808086;
+	padding: 2px;
+	background-color: rgb(142,142,142);
+}</string>
+     </property>
+     <property name="text">
+      <string>CHOISIR PHOTO</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_10">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>290</y>
+       <width>61</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:none;
+font: 10pt &quot;Roboto&quot;;</string>
+     </property>
+     <property name="text">
+      <string>GENRE</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="photo">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>91</y>
+       <width>131</width>
+       <height>151</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:1px solid rgb(198, 198, 198);
+padding:1px;
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="../imageQtDesigner.qrc">:/img/assets/photo.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QDateEdit" name="date_field">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>199</y>
+       <width>201</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QDateEdit{
+padding-lefl:10px;
+border:1px solid #444;
+border-radius:5px;
+color: rgb(0, 0, 0);
+}
+QDateEdit::drop-down {
+	image: url(:/img/assets/arrow-down-sign-to-navigate.png);
+	width:20px;
+	padding:5px;
+    subcontrol-position: right top;
+    subcontrol-origin:padding;
+	border-left:1px solid #444;
+	color:black;
+}</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="readOnly">
+      <bool>false</bool>
+     </property>
+     <property name="buttonSymbols">
+      <enum>QAbstractSpinBox::UpDownArrows</enum>
+     </property>
+     <property name="specialValueText">
+      <string/>
+     </property>
+     <property name="correctionMode">
+      <enum>QAbstractSpinBox::CorrectToPreviousValue</enum>
+     </property>
+     <property name="keyboardTracking">
+      <bool>true</bool>
+     </property>
+     <property name="showGroupSeparator" stdset="0">
+      <bool>false</bool>
+     </property>
+     <property name="dateTime">
+      <datetime>
+       <hour>0</hour>
+       <minute>0</minute>
+       <second>0</second>
+       <year>1921</year>
+       <month>1</month>
+       <day>1</day>
+      </datetime>
+     </property>
+     <property name="maximumDate">
+      <date>
+       <year>2221</year>
+       <month>12</month>
+       <day>31</day>
+      </date>
+     </property>
+     <property name="minimumDate">
+      <date>
+       <year>1921</year>
+       <month>1</month>
+       <day>1</day>
+      </date>
+     </property>
+     <property name="calendarPopup">
+      <bool>true</bool>
+     </property>
+     <property name="date">
+      <date>
+       <year>1921</year>
+       <month>1</month>
+       <day>1</day>
+      </date>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lieu_field">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>242</y>
+       <width>201</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">padding-lefl:10px;
+border:1px solid #444;
+border-radius:5px;</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="genre_h">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>290</y>
+       <width>82</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:none;
+font: 10pt &quot;Roboto&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Masculin</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="genre_f">
+     <property name="geometry">
+      <rect>
+       <x>287</x>
+       <y>290</y>
+       <width>82</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:none;
+font: 10pt &quot;Roboto&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Feminin</string>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="domicile_field">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>325</y>
+       <width>261</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">padding-lefl:10px;
+border:1px solid #444;
+border-radius:5px;</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="nationalite_field">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>367</y>
+       <width>261</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">padding-lefl:10px;
+border:1px solid #444;
+border-radius:5px;</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="pere_field">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>457</y>
+       <width>461</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">padding-lefl:10px;
+border:1px solid #444;
+border-radius:5px;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="dragEnabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="mere_field">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>520</y>
+       <width>461</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">padding-lefl:10px;
+border:1px solid #444;
+border-radius:5px;</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="nettoyer_btn">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>570</y>
+       <width>151</width>
+       <height>40</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+	font: 57 12pt &quot;Roboto Medium&quot;;
+	border-style: solid;
+	border-color: rgb(85, 85, 85);
+	border-width: 1px;
+	border-radius: 20px;
+	color: rgb(0,0,0);
+	padding: 2px;
+	background-color: rgb(255,255,255);
+}
+QPushButton:pressed{
+	border:none;
+	border-radius: 20px;
+	color: rgb(0,0,0);
+	padding: 2px;
+	background-color: rgb(142,142,142);
+}
+QPushButton:disabled{
+	border-style: solid;
+	border-color: rgb(85, 85, 85);
+	border-radius: 20px;
+	color: #808086;
+	padding: 2px;
+	background-color: rgb(142,142,142);
+}</string>
+     </property>
+     <property name="text">
+      <string>NETTOYER</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="envoyer_btn">
+     <property name="geometry">
+      <rect>
+       <x>360</x>
+       <y>570</y>
+       <width>151</width>
+       <height>40</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+	font: 57 12pt &quot;Roboto Medium&quot;;
+	background-color:#777fff;
+	color:white;
+	border:none;
+	border-radius:20px;
+}
+QPushButton:hover{
+	background-color:#0069d9;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>ENVOYER</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>576</x>
+      <y>169</y>
+      <width>709</width>
+      <height>401</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+    <column>
+     <property name="text">
+      <string>ID</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Nom</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Prénom(s)</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Date de Naisance</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Lieu de Naissance</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Genre</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Domicile</string>
+     </property>
+    </column>
+   </widget>
+   <widget class="QPushButton" name="apercu_btn">
+    <property name="geometry">
+     <rect>
+      <x>860</x>
+      <y>590</y>
+      <width>131</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	color:white;
+	border:none;
+	border-radius:18px;
+	font: 57 12pt &quot;Roboto Medium&quot;;
+	background-color:#777fff;
+}
+QPushButton:hover{
+	background-color:#0069d9;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>APERCU</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_12">
+    <property name="geometry">
+     <rect>
+      <x>573</x>
+      <y>43</y>
+      <width>711</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius:5px;
+color: rgb(255, 255, 255);
+font: 57 16pt &quot;Roboto Medium&quot;;
+background-color:#777fff;</string>
+    </property>
+    <property name="text">
+     <string>LISTE DES PERSONNES ENREGISTREES</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="modifier_btn">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>590</y>
+      <width>131</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	font: 57 12pt &quot;Roboto Medium&quot;;
+	border-style: solid;
+	border-color: rgb(85, 85, 85);
+	border-width: 1px;
+	border-radius: 18px;
+	color: rgb(0,0,0);
+	padding: 2px;
+	background-color: rgb(255,255,255);
+}
+QPushButton:pressed{
+	border:none;
+	border-radius: 18px;
+	color: rgb(0,0,0);
+	padding: 2px;
+	background-color: rgb(142,142,142);
+}
+QPushButton:disabled{
+	border-style: solid;
+	border-color: rgb(85, 85, 85);
+	border-radius: 18px;
+	color: #808086;
+	padding: 2px;
+	background-color: rgb(142,142,142);
+}</string>
+    </property>
+    <property name="text">
+     <string>MODIFIER</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="supprimer_btn">
+    <property name="geometry">
+     <rect>
+      <x>1100</x>
+      <y>590</y>
+      <width>131</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	font: 57 12pt &quot;Roboto Medium&quot;;
+	color:white;
+	border:none;
+	border-radius:18px;
+	background-color:#dc3545;
+}
+QPushButton:hover{
+	background-color: #c82333;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>SUPPRIMER</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="recherche_edit">
+    <property name="geometry">
+     <rect>
+      <x>589</x>
+      <y>122</y>
+      <width>291</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:1px solid black;
+border-right-color: none;
+font: 11pt &quot;Roboto&quot;;
+border-top-left-radius: 12px;
+border-bottom-left-radius: 14px;
+padding:5px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="placeholderText">
+     <string>nom, prenom ou domicile</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="search_icon">
+    <property name="geometry">
+     <rect>
+      <x>877</x>
+      <y>122</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:1px solid black;
+border-left-color: none;
+background-color: rgb(255, 255, 255);
+border-top-right-radius: 14px;
+border-bottom-right-radius: 14px;
+padding: 5px</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../imageQtDesigner.qrc">:/img/assets/search.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="filtre_field">
+    <property name="geometry">
+     <rect>
+      <x>990</x>
+      <y>122</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QComboBox{
+border:1px solid black;
+font: 11pt &quot;Roboto&quot;;
+border-radius: 14px;
+padding:5px;
+}
+QComboBox::drop-down {
+	image: url(:/img/assets/arrow-down-sign-to-navigate.png);
+	width:20px;
+	padding:6px;
+    subcontrol-position: right top;
+    subcontrol-origin:padding;
+	border-left:1px solid #444;
+	color:black;
+}
+</string>
+    </property>
+    <property name="duplicatesEnabled">
+     <bool>false</bool>
+    </property>
+    <item>
+     <property name="text">
+      <string>Tout</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Masculin (M)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Feminin (F)</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QPushButton" name="filtrer_btn">
+    <property name="geometry">
+     <rect>
+      <x>1150</x>
+      <y>122</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	font: 57 10pt &quot;Roboto Medium&quot;;
+	border-style: solid;
+	border-color: rgb(85, 85, 85);
+	border-width: 1px;
+	border-radius: 15px;
+	color: rgb(0,0,0);
+	padding: 2px;
+	background-color: rgb(255,255,255);
+}
+QPushButton:pressed{
+	border:none;
+	border-radius: 15px;
+	color: rgb(0,0,0);
+	padding: 2px;
+	background-color: rgb(142,142,142);
+}
+QPushButton:disabled{
+	border-style: solid;
+	border-color: rgb(85, 85, 85);
+	border-radius: 15px;
+	color: #808086;
+	padding: 2px;
+	background-color: rgb(142,142,142);
+}</string>
+    </property>
+    <property name="text">
+     <string>FILTRER</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>556</x>
+      <y>-10</y>
+      <width>16</width>
+      <height>671</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1299</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="../imageQtDesigner.qrc"/>
+ </resources>
+ <connections/>
+</ui>

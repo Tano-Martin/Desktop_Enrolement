@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>581</width>
+    <height>380</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Carte d'identité</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../imageQtDesigner.qrc">
+    <normaloff>:/img/assets/experience_pro.png</normaloff>:/img/assets/experience_pro.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
+  <widget class="QPushButton" name="capture_btn">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>342</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	color:#777fff;
+	border:1px solid #777fff;
+	background-color: white;
+	border-radius:15px;
+}
+QPushButton:hover{
+	color: rgb(255, 255, 255);
+	background-color:#777fff;
+}</string>
+   </property>
+   <property name="text">
+    <string>GENERER</string>
+   </property>
+  </widget>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>30</y>
+     <width>501</width>
+     <height>301</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border:1px solid rgb(193, 193, 193);
+border-radius:20px;
+font: 11pt &quot;Roboto&quot;;
+background-color:rgb(249, 249, 249);
+</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="photo">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>80</y>
+      <width>111</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:1px solid rgb(193, 193, 193);
+padding:1px;
+border-radius:1px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../imageQtDesigner.qrc">:/img/assets/photo.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>10</y>
+      <width>281</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:none;
+color:rgb(0, 170, 0);
+font: 14pt &quot;Roboto&quot;;</string>
+    </property>
+    <property name="text">
+     <string>REPUBLIQUE DE CÔTE D'IVOIRE</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>40</y>
+      <width>131</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 57 7pt &quot;Roboto Medium&quot;;
+color: rgb(255, 0, 0);
+border:none;</string>
+    </property>
+    <property name="text">
+     <string>CARTE NATIONNAL D'IDENTITE</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>100</y>
+      <width>171</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:none;
+font: 8pt &quot;Roboto&quot;;
+font-style:italic;</string>
+    </property>
+    <property name="text">
+     <string>Nom</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="nom_field">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>81</y>
+      <width>221</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:none;
+font: 57 13pt &quot;Roboto Medium&quot;;</string>
+    </property>
+    <property name="text">
+     <string>ffff5855542145536655255</string>
+    </property>
+    <property name="maxLength">
+     <number>23</number>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>226</y>
+      <width>151</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:none;
+font: 8pt &quot;Roboto&quot;;
+font-style:italic;</string>
+    </property>
+    <property name="text">
+     <string>Domicile</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="nationalite_field">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>205</y>
+      <width>141</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:none;
+font: 57 13pt &quot;Roboto Medium&quot;;</string>
+    </property>
+    <property name="text">
+     <string>ddd5555555555</string>
+    </property>
+    <property name="maxLength">
+     <number>13</number>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>186</y>
+      <width>111</width>
+      <height>14</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:none;
+font: 8pt &quot;Roboto&quot;;
+font-style:italic;</string>
+    </property>
+    <property name="text">
+     <string>Date de Naissance</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="date_field">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>167</y>
+      <width>111</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:none;
+font: 57 13pt &quot;Roboto Medium&quot;;</string>
+    </property>
+    <property name="text">
+     <string>ddd5862489</string>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="sexe_field">
+    <property name="geometry">
+     <rect>
+      <x>273</x>
+      <y>167</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:none;
+font: 57 13pt &quot;Roboto Medium&quot;;</string>
+    </property>
+    <property name="text">
+     <string>h</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>186</y>
+      <width>31</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:none;
+font: 8pt &quot;Roboto&quot;;
+font-style:italic;</string>
+    </property>
+    <property name="text">
+     <string>Sexe</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lieu_field">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>167</y>
+      <width>151</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:none;
+font: 57 13pt &quot;Roboto Medium&quot;;</string>
+    </property>
+    <property name="text">
+     <string>addddrrrrrreereefh</string>
+    </property>
+    <property name="maxLength">
+     <number>18</number>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>186</y>
+      <width>101</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:none;
+font: 8pt &quot;Roboto&quot;;
+font-style:italic;</string>
+    </property>
+    <property name="text">
+     <string>Lieu de Naissance</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_11">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>226</y>
+      <width>111</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:none;
+font: 8pt &quot;Roboto&quot;;
+font-style:italic;</string>
+    </property>
+    <property name="text">
+     <string>Nationalité</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="domicile_field">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>205</y>
+      <width>151</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:none;
+font: 57 13pt &quot;Roboto Medium&quot;;</string>
+    </property>
+    <property name="text">
+     <string>58855555222222</string>
+    </property>
+    <property name="maxLength">
+     <number>14</number>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="prenom_field">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>115</y>
+      <width>261</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:none;
+font: 57 13pt &quot;Roboto Medium&quot;;</string>
+    </property>
+    <property name="text">
+     <string>ffff55555555555555555555</string>
+    </property>
+    <property name="maxLength">
+     <number>24</number>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>134</y>
+      <width>111</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:none;
+font: 8pt &quot;Roboto&quot;;
+font-style:italic;</string>
+    </property>
+    <property name="text">
+     <string>Prénom(s)</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>10</y>
+      <width>71</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="statusTip">
+     <string/>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:none;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../imageQtDesigner.qrc">:/img/assets/armoirie2.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+    <property name="openExternalLinks">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_12">
+    <property name="geometry">
+     <rect>
+      <x>34</x>
+      <y>217</y>
+      <width>14</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:none;
+font: 8pt &quot;Roboto&quot;;
+font-style:italic;</string>
+    </property>
+    <property name="text">
+     <string>n°</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_13">
+    <property name="geometry">
+     <rect>
+      <x>54</x>
+      <y>217</y>
+      <width>51</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Roboto</family>
+      <pointsize>8</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;Roboto&quot;;
+border:none;</string>
+    </property>
+    <property name="text">
+     <string>CI0008011</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="id_field">
+    <property name="geometry">
+     <rect>
+      <x>105</x>
+      <y>217</y>
+      <width>15</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Roboto</family>
+      <pointsize>8</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="whatsThis">
+     <string/>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;Roboto&quot;;
+border:none;</string>
+    </property>
+    <property name="inputMask">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>45</string>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_14">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>280</y>
+      <width>141</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:none;
+font: 8pt &quot;Roboto&quot;;
+font-style:italic;</string>
+    </property>
+    <property name="text">
+     <string>Nom et Prénom de la Mère</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="pere_field">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>260</y>
+      <width>161</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:none;
+font: 57 13pt &quot;Roboto Medium&quot;;</string>
+    </property>
+    <property name="text">
+     <string>dddd</string>
+    </property>
+    <property name="maxLength">
+     <number>16</number>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="mere_field">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>260</y>
+      <width>161</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:none;
+font: 57 13pt &quot;Roboto Medium&quot;;</string>
+    </property>
+    <property name="text">
+     <string>ttyy</string>
+    </property>
+    <property name="maxLength">
+     <number>16</number>
+    </property>
+    <property name="cursorPosition">
+     <number>4</number>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_15">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>280</y>
+      <width>151</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:none;
+font: 8pt &quot;Roboto&quot;;
+font-style:italic;</string>
+    </property>
+    <property name="text">
+     <string>Nom et Prénom du Père</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>236</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:none;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../imageQtDesigner.qrc">:/img/assets/cote-divoire-1758956_960_720.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../imageQtDesigner.qrc"/>
+ </resources>
+ <connections/>
+</ui>

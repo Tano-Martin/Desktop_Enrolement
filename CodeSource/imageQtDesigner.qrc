@@ -1,0 +1,12 @@
+<RCC>
+  <qresource prefix="img">
+    <file>assets/arrow-down-sign-to-navigate.png</file>
+    <file>assets/search.png</file>
+    <file>assets/1914868.png</file>
+    <file>assets/cote-divoire-1758956_960_720.png</file>
+    <file>assets/photo.png</file>
+    <file>assets/amoirie.png</file>
+    <file>assets/armoirie2.png</file>
+    <file>assets/experience_pro.png</file>
+  </qresource>
+</RCC>
