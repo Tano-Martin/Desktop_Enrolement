@@ -12,8 +12,8 @@ FORM_CLASS = Ui_Dialog
 class MainCarte(QtWidgets.QDialog, FORM_CLASS):
     def __init__(self, id_element):
         super().__init__()
-        self.id_element = id_element
         self.setupUi(self)
+        self.id_element = id_element
         self.donnee = utils.DataConfig()
         self.datas_()
         self.capture_btn.clicked.connect(self.capture)
@@ -52,9 +52,7 @@ class MainCarte(QtWidgets.QDialog, FORM_CLASS):
             self.nationalite_field.setText(str(valeur[7]))
             self.pere_field.setText(str(valeur[8]))
             self.mere_field.setText(str(valeur[9]))
-            image = valeur[10]
-            pixmap = QtGui.QPixmap()
-            pixmap.loadFromData(image)
-            self.photo.setPixmap(pixmap)
+            self.photo.setPixmap(QtGui.QPixmap(valeur[10]))
+
 
 

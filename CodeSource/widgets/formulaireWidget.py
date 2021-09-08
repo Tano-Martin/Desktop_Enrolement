@@ -1,5 +1,8 @@
 import sqlite3
 import re
+import os
+import shutil
+from pathlib import Path
 from storage import utils
 from PyQt5 import QtGui, QtWidgets, QtCore
 from PyQt5.uic import loadUiType
@@ -17,9 +20,15 @@ class MainWindow(QtWidgets.QMainWindow, FORM_CLASS):
         self.donnee = utils.DataConfig()
         self.setupUi(self)
         self.setFixedSize(1299, 684)
+        self.gestion_de_repertoire()
         self.data_()
-        self.bouton()      
-        
+        self.bouton()
+
+    def gestion_de_repertoire(self):
+        chemin = os.path.join(Path(__file__).resolve().parent.parent, "resource")
+        if os.path.exists(chemin) == False:
+            os.mkdir(chemin)
+
     def lancer_piece(self, id_element):
         self.windowData = MainCarte(id_element)
         self.windowData.show()
@@ -34,7 +43,13 @@ class MainWindow(QtWidgets.QMainWindow, FORM_CLASS):
         self.modifier_btn.clicked.connect(self.modifier_data)
         self.supprimer_btn.clicked.connect(self.supprimer_data)
         self.apercu_btn.clicked.connect(self.apercu_data)
-    
+
+    def choisir_photo(self):
+        nom_photo = QtWidgets.QFileDialog.getOpenFileName(self, "Choisir une photo", "c://", "images (*.png *.jpg *.jpeg *.gif)")
+        photo[1] = nom_photo[0]
+        self.photo.setPixmap(QtGui.QPixmap(photo[1]))
+        self.photo.setScaledContents(True)
+
     def apercu_data(self):
         ligne = self.tableWidget.currentRow()
         if ligne == -1:
@@ -46,17 +61,10 @@ class MainWindow(QtWidgets.QMainWindow, FORM_CLASS):
     def data_(self):
         resultat = self.donnee.recupereData()
         self.tableWidget.setRowCount(0)
-
         for row_number, row_data in enumerate(resultat):
             self.tableWidget.insertRow(row_number)
             for colum_number, data in enumerate(row_data):
                 self.tableWidget.setItem(row_number, colum_number, QtWidgets.QTableWidgetItem(str(data)))
-
-    def choisir_photo(self):
-        nom_photo = QtWidgets.QFileDialog.getOpenFileName(self, "Choisir photo", "c://", "images (*.png *.jpg *.jpeg *.gif)")
-        photo[1] = nom_photo[0]
-        self.photo.setPixmap(QtGui.QPixmap(photo[1]))
-        self.photo.setScaledContents(True)
 
     def enregistrer_data(self):
         nom = self.nom_field.text().upper()
@@ -72,23 +80,24 @@ class MainWindow(QtWidgets.QMainWindow, FORM_CLASS):
             genre = "M"
         else:
             genre = "F"
+
         if not nom or not prenom or not lieu or not nationalite or not domicile or not pere_field or not mere_field or date == "01/01/1921":
             QtWidgets.QMessageBox.warning(self, "Erreur", "Veuillez remplir tous les champs avant de les soumettre !")
         elif not photo[1]:
             QtWidgets.QMessageBox.warning(self, "Erreur", "Veuillez ajouter un photo d'identité s'il vous plaît !")
         else:
             valeurs = self.donnee.verifieData(nom, prenom)
+            chemin = os.path.join(Path(__file__).resolve().parent.parent, "resource")
             if valeurs != None:
-                image = open(photo[1], "rb")
-                valeur = (nom, prenom, date, lieu, genre, pere_field, mere_field, domicile, nationalite, sqlite3.Binary(image.read()), int(valeurs[0]))
-                self.donnee.ajoutData(valeur=valeur)
+                valeur = (nom, prenom, date, lieu, genre, pere_field, mere_field, domicile, nationalite, photo[1], int(valeurs[0]))
+                self.donnee.modifieData(valeur)
                 QtWidgets.QMessageBox.information(self, "Succès", "Modification effectué avec succès")
                 self.nettoyer_data()
                 self.data_()
             else:
-                image = open(photo[1], "rb")
-                valeur = (nom, prenom, date, lieu, genre, pere_field, mere_field, domicile, nationalite, sqlite3.Binary(image.read()))
-                self.donnee.modifieData(valeur)
+                chemin_photo = shutil.copy(photo[1], chemin)
+                valeur = (nom, prenom, date, lieu, genre, pere_field, mere_field, domicile, nationalite, chemin_photo)
+                self.donnee.ajoutData(valeur)
                 QtWidgets.QMessageBox.information(self, "Succès", "Enregristrement effectué avec succès")
                 self.nettoyer_data()
                 self.data_()
@@ -112,10 +121,8 @@ class MainWindow(QtWidgets.QMainWindow, FORM_CLASS):
                 self.nationalite_field.setText(str(valeur[7]).title())
                 self.pere_field.setText(str(valeur[8]).title())
                 self.mere_field.setText(str(valeur[9]).title())
-                image = valeur[10]
-                pixmap = QtGui.QPixmap()
-                pixmap.loadFromData(image)
-                self.photo.setPixmap(pixmap)
+                photo[1] = valeur[10]
+                self.photo.setPixmap(QtGui.QPixmap(photo[1]))
                 if genre == "M":
                     self.genre_h.setChecked(True)
                     self.genre_f.setChecked(False)
@@ -131,7 +138,8 @@ class MainWindow(QtWidgets.QMainWindow, FORM_CLASS):
             id_ligne = self.tableWidget.item(ligne, 0).text()
             reponse = QtWidgets.QMessageBox.question(self, "Danger", "Voulez-vous vraiment supprimer ?", QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No)
             if reponse == 16384:
-                self.donnee.supprimeData(id_ligne)
+                chemin_photo = self.donnee.supprimeData(id_ligne)
+                os.remove(chemin_photo)
                 self.data_()
                 self.nettoyer_data()
 
