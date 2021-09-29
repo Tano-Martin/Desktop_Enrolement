@@ -12,7 +12,9 @@ from ui.formulaire import Ui_MainWindow
 # FORM_CLASS, _ = loadUiType(os.path.join(os.path.dirname("__file__"), "ui/formulaire.ui"))
 FORM_CLASS = Ui_MainWindow
 
-photo = {1 : ""}
+photo = {1: ""}
+
+
 class MainWindow(QtWidgets.QMainWindow, FORM_CLASS):
     def __init__(self, parent=None):
         super(MainWindow, self).__init__(parent)
@@ -45,7 +47,9 @@ class MainWindow(QtWidgets.QMainWindow, FORM_CLASS):
         self.apercu_btn.clicked.connect(self.apercu_data)
 
     def choisir_photo(self):
-        nom_photo = QtWidgets.QFileDialog.getOpenFileName(self, "Choisir une photo", "c://", "images (*.png *.jpg *.jpeg *.gif)")
+        nom_photo = QtWidgets.QFileDialog.getOpenFileName(
+            self, "Choisir une photo", "c://", "images (*.png *.jpg *.jpeg *.gif)"
+        )
         photo[1] = nom_photo[0]
         self.photo.setPixmap(QtGui.QPixmap(photo[1]))
         self.photo.setScaledContents(True)
@@ -53,8 +57,10 @@ class MainWindow(QtWidgets.QMainWindow, FORM_CLASS):
     def apercu_data(self):
         ligne = self.tableWidget.currentRow()
         if ligne == -1:
-            QtWidgets.QMessageBox.warning(self, "Erreur", "Veuillez selectionner une personne s'il vous plaît !")
-        else :
+            QtWidgets.QMessageBox.warning(
+                self, "Erreur", "Veuillez selectionner une personne s'il vous plaît !"
+            )
+        else:
             id_ligne = self.tableWidget.item(ligne, 0).text()
             self.lancer_piece(id_ligne)
 
@@ -64,7 +70,9 @@ class MainWindow(QtWidgets.QMainWindow, FORM_CLASS):
         for row_number, row_data in enumerate(resultat):
             self.tableWidget.insertRow(row_number)
             for colum_number, data in enumerate(row_data):
-                self.tableWidget.setItem(row_number, colum_number, QtWidgets.QTableWidgetItem(str(data)))
+                self.tableWidget.setItem(
+                    row_number, colum_number, QtWidgets.QTableWidgetItem(str(data))
+                )
 
     def enregistrer_data(self):
         nom = self.nom_field.text().upper()
@@ -81,31 +89,75 @@ class MainWindow(QtWidgets.QMainWindow, FORM_CLASS):
         else:
             genre = "F"
 
-        if not nom or not prenom or not lieu or not nationalite or not domicile or not pere_field or not mere_field or date == "01/01/1921":
-            QtWidgets.QMessageBox.warning(self, "Erreur", "Veuillez remplir tous les champs avant de les soumettre !")
+        if (
+            not nom
+            or not prenom
+            or not lieu
+            or not nationalite
+            or not domicile
+            or not pere_field
+            or not mere_field
+            or date == "01/01/1921"
+        ):
+            QtWidgets.QMessageBox.warning(
+                self,
+                "Erreur",
+                "Veuillez remplir tous les champs avant de les soumettre !",
+            )
         elif not photo[1]:
-            QtWidgets.QMessageBox.warning(self, "Erreur", "Veuillez ajouter un photo d'identité s'il vous plaît !")
+            QtWidgets.QMessageBox.warning(
+                self, "Erreur", "Veuillez ajouter un photo d'identité s'il vous plaît !"
+            )
         else:
             valeurs = self.donnee.verifieData(nom, prenom)
             chemin = os.path.join(Path(__file__).resolve().parent.parent, "resource")
             if valeurs != None:
-                valeur = (nom, prenom, date, lieu, genre, pere_field, mere_field, domicile, nationalite, photo[1], int(valeurs[0]))
+                valeur = (
+                    nom,
+                    prenom,
+                    date,
+                    lieu,
+                    genre,
+                    pere_field,
+                    mere_field,
+                    domicile,
+                    nationalite,
+                    photo[1],
+                    int(valeurs[0]),
+                )
                 self.donnee.modifieData(valeur)
-                QtWidgets.QMessageBox.information(self, "Succès", "Modification effectué avec succès")
+                QtWidgets.QMessageBox.information(
+                    self, "Succès", "Modification effectué avec succès"
+                )
                 self.nettoyer_data()
                 self.data_()
             else:
                 chemin_photo = shutil.copy(photo[1], chemin)
-                valeur = (nom, prenom, date, lieu, genre, pere_field, mere_field, domicile, nationalite, chemin_photo)
+                valeur = (
+                    nom,
+                    prenom,
+                    date,
+                    lieu,
+                    genre,
+                    pere_field,
+                    mere_field,
+                    domicile,
+                    nationalite,
+                    chemin_photo,
+                )
                 self.donnee.ajoutData(valeur)
-                QtWidgets.QMessageBox.information(self, "Succès", "Enregristrement effectué avec succès")
+                QtWidgets.QMessageBox.information(
+                    self, "Succès", "Enregristrement effectué avec succès"
+                )
                 self.nettoyer_data()
                 self.data_()
 
     def modifier_data(self):
         ligne = self.tableWidget.currentRow()
         if ligne == -1:
-            QtWidgets.QMessageBox.warning(self, "Erreur", "Veuillez selectionner une personne s'il vous plaît !")
+            QtWidgets.QMessageBox.warning(
+                self, "Erreur", "Veuillez selectionner une personne s'il vous plaît !"
+            )
         else:
             id_ligne = self.tableWidget.item(ligne, 0).text()
             valeur = self.donnee.recupereID(id_ligne)
@@ -114,7 +166,9 @@ class MainWindow(QtWidgets.QMainWindow, FORM_CLASS):
                 date_list = [int(i) for i in re.findall(r"-?\d+\.?\d*", date_string)]
                 self.nom_field.setText(str(valeur[1]).title())
                 self.prenom_field.setText(str(valeur[2]).title())
-                self.date_field.setDate(QtCore.QDate(date_list[2], date_list[1], date_list[0]))
+                self.date_field.setDate(
+                    QtCore.QDate(date_list[2], date_list[1], date_list[0])
+                )
                 self.lieu_field.setText(str(valeur[4]).title())
                 genre = str(valeur[5])
                 self.domicile_field.setText(str(valeur[6]).title())
@@ -133,10 +187,17 @@ class MainWindow(QtWidgets.QMainWindow, FORM_CLASS):
     def supprimer_data(self):
         ligne = self.tableWidget.currentRow()
         if ligne == -1:
-            QtWidgets.QMessageBox.warning(self, "Erreur", "Veuillez selectionner une personne s'il vous plaît !")
+            QtWidgets.QMessageBox.warning(
+                self, "Erreur", "Veuillez selectionner une personne s'il vous plaît !"
+            )
         else:
             id_ligne = self.tableWidget.item(ligne, 0).text()
-            reponse = QtWidgets.QMessageBox.question(self, "Danger", "Voulez-vous vraiment supprimer ?", QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No)
+            reponse = QtWidgets.QMessageBox.question(
+                self,
+                "Danger",
+                "Voulez-vous vraiment supprimer ?",
+                QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No,
+            )
             if reponse == 16384:
                 chemin_photo = self.donnee.supprimeData(id_ligne)
                 os.remove(chemin_photo)
@@ -155,7 +216,9 @@ class MainWindow(QtWidgets.QMainWindow, FORM_CLASS):
             for row_number, row_data in enumerate(resultat):
                 self.tableWidget.insertRow(row_number)
                 for colum_number, data in enumerate(row_data):
-                    self.tableWidget.setItem(row_number, colum_number, QtWidgets.QTableWidgetItem(str(data)))
+                    self.tableWidget.setItem(
+                        row_number, colum_number, QtWidgets.QTableWidgetItem(str(data))
+                    )
 
     def filtrer_data(self):
         filtre = self.filtre_field.currentText()
@@ -168,7 +231,9 @@ class MainWindow(QtWidgets.QMainWindow, FORM_CLASS):
             for row_number, row_data in enumerate(resultat):
                 self.tableWidget.insertRow(row_number)
                 for colum_number, data in enumerate(row_data):
-                    self.tableWidget.setItem(row_number, colum_number, QtWidgets.QTableWidgetItem(str(data)))
+                    self.tableWidget.setItem(
+                        row_number, colum_number, QtWidgets.QTableWidgetItem(str(data))
+                    )
         elif filtre == "Feminin (F)":
             filtre_ = "F"
             resultat = self.donnee.filtreData(filtre_)
@@ -176,7 +241,9 @@ class MainWindow(QtWidgets.QMainWindow, FORM_CLASS):
             for row_number, row_data in enumerate(resultat):
                 self.tableWidget.insertRow(row_number)
                 for colum_number, data in enumerate(row_data):
-                    self.tableWidget.setItem(row_number, colum_number, QtWidgets.QTableWidgetItem(str(data)))
+                    self.tableWidget.setItem(
+                        row_number, colum_number, QtWidgets.QTableWidgetItem(str(data))
+                    )
 
     def nettoyer_data(self):
         self.nom_field.clear()
@@ -190,4 +257,3 @@ class MainWindow(QtWidgets.QMainWindow, FORM_CLASS):
         self.pere_field.clear()
         self.mere_field.clear()
         self.photo.setPixmap(QtGui.QPixmap(":/img/assets/photo.png"))
-

@@ -9,6 +9,7 @@ from ui.carte import Ui_Dialog
 # FORM_CLASS,_ = loadUiType(os.path.join(os.path.dirname("__file__"), "ui/carte.ui"))
 FORM_CLASS = Ui_Dialog
 
+
 class MainCarte(QtWidgets.QDialog, FORM_CLASS):
     def __init__(self, id_element):
         super().__init__()
@@ -21,22 +22,26 @@ class MainCarte(QtWidgets.QDialog, FORM_CLASS):
     def capture(self):
         dimension = self.frame.frameGeometry()
         print(dimension)
-        img,_ = QtWidgets.QFileDialog.getSaveFileName(self, "Enregistrer sous", filter="PNG(*.png);; JPEG(*.jpg)")
+        img, _ = QtWidgets.QFileDialog.getSaveFileName(
+            self, "Enregistrer sous", filter="PNG(*.png);; JPEG(*.jpg)"
+        )
         if sys.platform == "darwin":
             screen = QtWidgets.QApplication.primaryScreen()
             screenshot = screen.grabWindow(dimension)
             if img[-3:] == "png":
-                screenshot.save(img, 'png')
+                screenshot.save(img, "png")
             elif img[-3:] == "jpg":
-                screenshot.save(img, 'jpg')
+                screenshot.save(img, "jpg")
         else:
             screen = QtWidgets.QApplication.primaryScreen()
             screenshot = screen.grabWindow(self.frame.winId())
             if img[-3:] == "png":
-                screenshot.save(img, 'png')
+                screenshot.save(img, "png")
             elif img[-3:] == "jpg":
-                screenshot.save(img, 'jpg')
-        QtWidgets.QMessageBox.information(self, "Succès", "Capture enregistrer avec succès.")
+                screenshot.save(img, "jpg")
+        QtWidgets.QMessageBox.information(
+            self, "Succès", "Capture enregistrer avec succès."
+        )
         self.close()
 
     def datas_(self):
@@ -53,6 +58,3 @@ class MainCarte(QtWidgets.QDialog, FORM_CLASS):
             self.pere_field.setText(str(valeur[8]))
             self.mere_field.setText(str(valeur[9]))
             self.photo.setPixmap(QtGui.QPixmap(valeur[10]))
-
-
-
